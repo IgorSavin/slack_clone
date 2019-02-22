@@ -19,7 +19,7 @@ class MessagesHeader extends Component {
           <Input 
           size="mini"
           icon="search"
-          name="searcgTerm"
+          name="searchTerm"
           placeholder="Search Messages"
           />
         </Header>
