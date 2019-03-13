@@ -29,8 +29,10 @@ import Message from './Message'
 
   addMessageListener = channelId =>{
     let loadedMessages =[];
+    
     this.state.messagesRef.child(channelId).on('child_added', snap =>{
       loadedMessages.push(snap.val());
+      console.log(loadedMessages)
       this.setState({
         messages: loadedMessages,
         messagesLoading: false
@@ -57,7 +59,7 @@ import Message from './Message'
 
         <Segment>
           <Comment.Group className="messages">
-            {this.displayMessages(messages)}
+              {this.displayMessages(messages)}
           </Comment.Group>
         </Segment>
 

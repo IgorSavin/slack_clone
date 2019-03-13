@@ -8,7 +8,8 @@ const isOwnMessage = (message, user) =>{
 
 const timeFromNow = timestamp => moment(timestamp).fromNow();
 
-const Message = ({message, user}) => (
+const Message = ({message, user}) => {
+  return (
     <Comment>
       <Comment.Avatar src={message.user.avatar}/>
       <Comment.Content className={isOwnMessage(message, user)}>
@@ -18,6 +19,10 @@ const Message = ({message, user}) => (
       </Comment.Content>
     </Comment>
 );
+  }
 
 
 export default Message;
+
+
+
