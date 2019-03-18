@@ -84,7 +84,8 @@ class MessageForm extends Component {
    () => {
      this.state.uploadTask.on('state_changed', snap=>{
        const percentUploaded = Math.round((snap.bytesTransferred / snap.totalBytes) * 100);
-       this.setState({ percentUploaded })
+       this.props.isProgressBarVisible(percentUploaded);
+       this.setState({ percentUploaded });
      },
      err =>{
        console.log(err);
@@ -157,6 +158,7 @@ class MessageForm extends Component {
           />
           <Button 
           color="teal"
+          disabled={uploadState === "uploading"}
           onClick={this.openModal}
           // onClick={console.log("right")}
           content="Upload Media"
